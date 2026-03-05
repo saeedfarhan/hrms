@@ -1,5 +1,5 @@
 // Remove axios dependency completely - using native fetch
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://hrms-ixi5.onrender.com';
 
 const api = {
   get: async (endpoint) => {
