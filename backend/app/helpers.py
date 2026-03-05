@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import func, and_
 from typing import List, Optional
-from .models.models import Employee, Attendance, AttendanceStatus
-from .schemas.schemas import EmployeeCreate, AttendanceCreate
+from models.models import Employee, Attendance, AttendanceStatus
+from schemas.schemas import EmployeeCreate, AttendanceCreate
 from fastapi import HTTPException
 
 

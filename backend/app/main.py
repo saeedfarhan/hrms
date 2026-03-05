@@ -1,17 +1,16 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from .db import engine, Base
-import uvicorn
-from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from typing import List
-from .db import get_db
-from .helpers import (
-    create_employee, create_attendance
+
+from db import engine, Base, get_db
+from helpers import create_employee, create_attendance
+from schemas.schemas import (
+    EmployeeCreate, EmployeeResponse, 
+    AttendanceCreate, AttendanceResponse
 )
-from .schemas.schemas import EmployeeCreate, EmployeeResponse, AttendanceCreate, AttendanceResponse
-from .models.models import Employee, Attendance
+from models.models import Employee, Attendance
 
 Base.metadata.create_all(bind=engine)
 

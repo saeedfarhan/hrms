@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date, ForeignKey, Enum
 from sqlalchemy.orm import relationship
-from ..db import Base
+from db import Base
 import enum
 
 class AttendanceStatus(enum.Enum):
