@@ -32,13 +32,3 @@ def create_attendance(db: Session, attendance: AttendanceCreate, employee_id: in
     db.refresh(db_attendance)
     return db_attendance
 
-def get_employee_attendance_stats(db: Session, employee_id: int):
-    result = db.query(
-        func.date(Attendance.date).label('month'),
-        func.count(func.case((Attendance.status == AttendanceStatus.PRESENT, 1))).label('present_days'),
-        func.count(func.case((Attendance.status == AttendanceStatus.ABSENT, 1))).label('absent_days')
-    ).filter(Attendance.employee_id == employee_id)\
-     .group_by(func.date_format(Attendance.date, '%Y-%m'))\
-     .order_by('month')\
-     .all()
-    return result
