@@ -91,5 +91,5 @@ def mark_attendance(employee_id: int, attendance: AttendanceCreate, db: Session 
         raise HTTPException(status_code=404, detail="Employee not found")
     return create_attendance(db, attendance, employee_id)
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+# if __name__ == "__main__":
+#     uvicorn.run(app, port=8000)
