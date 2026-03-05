@@ -1,9 +1,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+import os
 
 
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:tzfcBhcoyxoizdTmZNLADXlrnPxftVtk@trolley.proxy.rlwy.net:56713/railway"
+
+SQLALCHEMY_DATABASE_URL = os.environ.get('DATABASE_URL')
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
