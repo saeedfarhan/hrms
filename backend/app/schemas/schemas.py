@@ -35,5 +35,6 @@ class AttendanceResponse(BaseModel):
     class Config:
         from_attributes = True
 
-class EmployeeWithAttendance(EmployeeResponse):
-    attendances: list[AttendanceResponse] = []
+# TODO
+# class EmployeeWithAttendance(EmployeeResponse):
+#     attendances: list[AttendanceResponse] = []
