@@ -23,7 +23,7 @@ app = FastAPI(
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://hrms-lite-three-orcin.vercel.app"],
+    allow_origins=["https://hrms-ixi5.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
